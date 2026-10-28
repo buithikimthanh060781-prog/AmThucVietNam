@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  --color-son: #B83227;
+  --color-son-dark: #8F221A;
+  --color-son-light: #FDF2F0;
+
+  --color-dong: #D4A646;
+  --color-dong-dark: #A9802B;
+  --color-dong-light: #FDF8ED;
+
+  --color-kem: #FFF8ED;
+  --color-kem-dark: #F3E5CF;
+
+  --color-xanh: #315C45;
+  --color-xanh-dark: #20402F;
+  --color-xanh-light: #EBF4EF;
+
+  --color-nau: #39291F;
+  --color-nau-light: #5F4739;
+  --color-nau-muted: #846B5A;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #FFF8ED;
+    color: #39291F;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF8ED;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4A646;
+  border-radius: 5px;
+  border: 2px solid #FFF8ED;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B83227;
+}
+
+/* Subtle Dong Son Drum & Heritage Pattern */
+.bg-drum-pattern {
+  background-color: #FFF8ED;
+  background-image: radial-gradient(#D4A646 0.75px, transparent 0.75px), radial-gradient(#B83227 0.75px, #FFF8ED 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  background-opacity: 0.05;
+}
+
+.dongson-border {
+  border-image: repeating-linear-gradient(45deg, #D4A646, #D4A646 8px, #B83227 8px, #B83227 16px) 2;
+}
+
+/* Glass effect with warm cream background */
+.glass-kem {
+  background: rgba(255, 248, 237, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-dark {
+  background: rgba(57, 41, 31, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
