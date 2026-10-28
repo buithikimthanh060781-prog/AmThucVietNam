@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import { FavoritesProvider, useFavorites } from './context/FavoritesContext';
 import { Header } from './components/Header';
@@ -119,9 +119,9 @@ export default function App() {
   return (
     <LanguageProvider>
       <FavoritesProvider>
-        <BrowserRouter>
+        <HashRouter>
           <AppContent />
-        </BrowserRouter>
+        </HashRouter>
       </FavoritesProvider>
     </LanguageProvider>
   );
