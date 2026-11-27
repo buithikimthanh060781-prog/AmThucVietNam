@@ -11,7 +11,7 @@ export const STORIES_DATA: CulturalStory[] = [
     publishedDate: '15 Tháng 10, 2026',
     author: 'TS. Vũ Bằng Sơn - Nhà nghiên cứu văn hóa dân gian',
     category: 'Triết lý ẩm thực',
-    imageUrl: 'https://images.unsplash.com/photo-1505253758473-96b3015f27eb?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: './images/stories/mam-com-nguoi-viet.jpg',
     tags: ['Mâm cơm gia đình', 'Ngũ hành', 'Âm dương', 'Văn hóa truyền thống'],
     content: [
       {
@@ -111,7 +111,7 @@ export const STORIES_DATA: CulturalStory[] = [
     publishedDate: '24 Tháng 10, 2026',
     author: 'Nghệ nhân Phan Khắc Đạt - Đảo ngọc Phú Quốc',
     category: 'Nghệ thuật gia vị',
-    imageUrl: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: './images/stories/nuoc-mam-truyen-thong.jpg',
     tags: ['Nước mắm truyền thống', 'Phú Quốc', 'Phan Thiết', 'Gia vị Việt'],
     content: [
       {
@@ -150,7 +150,7 @@ export const STORIES_DATA: CulturalStory[] = [
     publishedDate: '10 Tháng 10, 2026',
     author: 'Lê Hoàng Yến - Nhà báo văn hóa',
     category: 'Phong tục lễ hội',
-    imageUrl: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: './images/stories/am-thuc-ngay-tet.jpg',
     tags: ['Tết cổ truyền', 'Bánh chưng', 'Bánh tét', 'Mâm cỗ Tết'],
     content: [
       {
@@ -197,7 +197,7 @@ export const STORIES_DATA: CulturalStory[] = [
     publishedDate: '18 Tháng 10, 2026',
     author: 'Marcus Nguyen - Phóng viên ẩm thực quốc tế',
     category: 'Văn hóa vỉa hè',
-    imageUrl: 'https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: './images/stories/am-thuc-duong-pho.jpg',
     tags: ['Street Food', 'Ẩm thực vỉa hè', 'Anthony Bourdain', 'Sài Gòn - Hà Nội'],
     content: [
       {
