@@ -102,7 +102,7 @@ export const Hero: React.FC = () => {
             <div className="w-full max-w-sm bg-[#FFF8ED]/95 backdrop-blur-md p-6 rounded-3xl shadow-2xl border-2 border-[#D4A646]/50 transform hover:-translate-y-1 transition-all">
               <div className="relative rounded-2xl overflow-hidden mb-4 aspect-4/3 shadow-inner">
                 <img
-                  src="https://images.unsplash.com/photo-1594998893017-36147cbcae05?auto=format&fit=crop&w=800&q=80"
+                  src="./images/dishes/bun-cha-ha-noi.webp"
                   alt="Bún chả Hà Nội nướng than hoa"
                   className="w-full h-full object-cover"
                 />

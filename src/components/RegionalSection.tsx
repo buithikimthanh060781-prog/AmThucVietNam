@@ -31,7 +31,7 @@ export const REGIONS_DATA: RegionalInfo[] = [
     descriptionEn: 'Northern cuisine emphasizes pristine clarity, subtle elegance, and gentle herb balances without excessive sugar or aggressive chilies.',
     accentColor: '#B83227', // Đỏ son
     badgeBg: 'bg-[#B83227]',
-    image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=1200&q=80',
+    image: './images/dishes/bun-cha-ha-noi.webp',
     dishes: [
       { name: 'Phở Bò Hà Nội', id: 'pho-ha-noi' },
       { name: 'Bún Chả Hà Nội', id: 'bun-cha-ha-noi' },
@@ -51,7 +51,7 @@ export const REGIONS_DATA: RegionalInfo[] = [
     descriptionEn: 'Shaped by radiant sunshine and coastal breezes, Central dishes boast fiery chilies, aged shrimp pastes, and the aesthetic mastery of imperial court banquets.',
     accentColor: '#D4A646', // Vàng đồng
     badgeBg: 'bg-[#D4A646]',
-    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=80',
+    image: './images/dishes/bun-bo-hue.jpg',
     dishes: [
       { name: 'Bún Bò Huế Cố Đô', id: 'bun-bo-hue' },
       { name: 'Mì Quảng Tôm Thịt', id: 'mi-quang-da-nang' },
@@ -71,7 +71,7 @@ export const REGIONS_DATA: RegionalInfo[] = [
     descriptionEn: 'The bountiful southern delta inspires lavish feasts enriched by fresh coconut milk, palm sugar, and an abundant meadow of wild water blooms.',
     accentColor: '#315C45', // Xanh lá
     badgeBg: 'bg-[#315C45]',
-    image: 'https://images.unsplash.com/photo-1505253758473-96b3015f27eb?auto=format&fit=crop&w=1200&q=80',
+    image: './images/dishes/banh-xeo-mien-tay.jpg',
     dishes: [
       { name: 'Cơm Tấm Sài Gòn', id: 'com-tam-sai-gon' },
       { name: 'Hủ Tiếu Nam Vang', id: 'hu-tieu-nam-vang' },

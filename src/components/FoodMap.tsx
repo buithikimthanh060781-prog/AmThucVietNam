@@ -347,7 +347,7 @@ export const FoodMap: React.FC<FoodMapProps> = ({ onSelectDish }) => {
               /* MAP VIEW: 2. REFERENCE GEOGRAPHIC MAP */
               <div className="relative w-full h-[620px] rounded-2xl overflow-hidden border border-[#D4A646]/30 bg-black/5 flex items-center justify-center">
                 <img
-                  src="/vietnam-reference-map.png"
+                  src="./vietnam-reference-map.png"
                   alt="Bản đồ địa lý Việt Nam"
                   className="w-full h-full object-contain filter drop-shadow-md"
                 />
