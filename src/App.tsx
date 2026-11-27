@@ -12,7 +12,6 @@ import { RegionsPage } from './pages/RegionsPage';
 import { SpecialtiesPage } from './pages/SpecialtiesPage';
 import { MapPage } from './pages/MapPage';
 import { StoriesPage } from './pages/StoriesPage';
-import { ContactPage } from './pages/ContactPage';
 import { Dish } from './types';
 import { CheckCircle2, X } from 'lucide-react';
 
@@ -82,7 +81,6 @@ const AppContent: React.FC = () => {
           <Route path="/specialties" element={<SpecialtiesPage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/stories" element={<StoriesPage />} />
-          <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
       </main>

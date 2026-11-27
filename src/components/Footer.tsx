@@ -1,24 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Sparkles, Mail, Phone, MapPin, Send, 
-  Heart, CheckCircle2 
-} from 'lucide-react';
+import { Sparkles, Heart, Compass } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Footer: React.FC = () => {
   const { language, t } = useLanguage();
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim() && email.includes('@')) {
-      setIsSubscribed(true);
-      setEmail('');
-      setTimeout(() => setIsSubscribed(false), 5000);
-    }
-  };
 
   return (
     <footer className="bg-[#39291F] text-[#FFF8ED] relative overflow-hidden pt-16 pb-12 border-t-4 border-[#D4A646]">
@@ -33,63 +19,38 @@ export const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Newsletter Section */}
+        {/* Cultural Heritage Banner */}
         <div className="bg-[#483528] rounded-3xl p-6 sm:p-10 mb-16 border border-[#D4A646]/30 shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            <div className="lg:col-span-7 space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#D4A646] flex items-center gap-1.5">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 text-center md:text-left">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#D4A646] flex items-center justify-center md:justify-start gap-1.5">
                 <Sparkles className="w-4 h-4" />
-                Cẩm Nang Ẩm Thực Việt
+                {language === 'vi' ? 'Tinh Hoa Ẩm Thực Việt Nam' : 'Vietnamese Culinary Heritage'}
               </span>
               <h3 className="font-serif font-bold text-2xl sm:text-3xl text-white">
-                {t('newsletterTitle')}
+                {language === 'vi' ? 'Hương Vị Truyền Thống - Đậm Đà Bản Sắc' : 'Traditional Flavors - Deep Cultural Identity'}
               </h3>
-              <p className="text-sm text-[#FFF8ED]/80 leading-relaxed font-light">
-                {t('newsletterDesc')}
+              <p className="text-sm text-[#FFF8ED]/80 leading-relaxed font-light max-w-2xl">
+                {language === 'vi'
+                  ? 'Mỗi món ăn là một câu chuyện văn hóa, một nét đẹp tâm hồn của người Việt từ Bắc chí Nam. Hãy cùng trân trọng và lan tỏa di sản ẩm thực quê hương.'
+                  : 'Each dish represents a timeless cultural story and the spirit of Vietnamese people from North to South. Savor and celebrate our authentic heritage.'}
               </p>
             </div>
-
-            <div className="lg:col-span-5">
-              {isSubscribed ? (
-                <div className="p-4 rounded-2xl bg-[#315C45] text-white flex items-center gap-3 animate-fade-in shadow-md">
-                  <CheckCircle2 className="w-6 h-6 text-[#D4A646] shrink-0" />
-                  <span className="text-sm font-semibold">{t('subscribeSuccess')}</span>
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
-                  <div className="relative flex-1">
-                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                      <Mail className="w-4 h-4 text-[#D4A646]" />
-                    </div>
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder={t('newsletterPlaceholder')}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#39291F] text-white placeholder-white/40 text-sm border border-[#D4A646]/40 focus:outline-none focus:ring-2 focus:ring-[#D4A646]"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="px-6 py-3 rounded-xl bg-[#B83227] hover:bg-[#8F221A] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    <span>{t('newsletterBtn')}</span>
-                    <Send className="w-4 h-4" />
-                  </button>
-                </form>
-              )}
-            </div>
-
+            <Link
+              to="/specialties"
+              className="px-6 py-3.5 rounded-xl bg-[#B83227] hover:bg-[#8F221A] text-white font-bold text-sm shadow-md transition-all shrink-0 flex items-center gap-2 cursor-pointer"
+            >
+              <Compass className="w-4 h-4" />
+              <span>{language === 'vi' ? 'Khám Phá Đặc Sản' : 'Explore Specialties'}</span>
+            </Link>
           </div>
         </div>
 
-        {/* 4 Footer Columns */}
+        {/* 3 Footer Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           
           {/* Col 1: Brand Info */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-5 space-y-4">
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="w-10 h-10 rounded-full bg-[#B83227] flex items-center justify-center text-[#D4A646] shadow-md border border-[#D4A646]/50">
                 <svg className="w-6 h-6 fill-current" viewBox="0 0 100 100">
@@ -107,7 +68,7 @@ export const Footer: React.FC = () => {
               </div>
             </Link>
 
-            <p className="text-xs sm:text-sm text-[#FFF8ED]/75 leading-relaxed font-light">
+            <p className="text-xs sm:text-sm text-[#FFF8ED]/75 leading-relaxed font-light max-w-md">
               {t('footerDesc')}
             </p>
 
@@ -144,7 +105,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Col 2: Quick Links */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-3 space-y-4">
             <h4 className="font-serif font-bold text-base text-[#D4A646] uppercase tracking-wider">
               {t('quickLinks')}
             </h4>
@@ -178,7 +139,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Col 3: Categories */}
-          <div className="lg:col-span-3 space-y-4">
+          <div className="lg:col-span-4 space-y-4">
             <h4 className="font-serif font-bold text-base text-[#D4A646] uppercase tracking-wider">
               {t('culinaryCategories')}
             </h4>
@@ -207,27 +168,6 @@ export const Footer: React.FC = () => {
                 <Link to="/specialties?category=hotpot_soups" className="hover:text-[#D4A646] transition-colors">
                   Lẩu Mắm & Cá Kho Tộ Nam Bộ
                 </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: Contact & Office */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-serif font-bold text-base text-[#D4A646] uppercase tracking-wider">
-              {t('contactInfo')}
-            </h4>
-            <ul className="space-y-3 text-xs sm:text-sm font-light text-[#FFF8ED]/85">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#D4A646] shrink-0 mt-0.5" />
-                <span>36 Phố Cổ, Hoàn Kiếm, Hà Nội & Quận 1, TP. Hồ Chí Minh</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#D4A646] shrink-0" />
-                <span>Hotline: 1900 8866 (Hỗ trợ du lịch)</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#D4A646] shrink-0" />
-                <span>contact@tinhhoamthucviet.vn</span>
               </li>
             </ul>
           </div>

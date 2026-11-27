@@ -39,7 +39,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenFavorites })
     { path: '/specialties', label: t('navSpecialties') },
     { path: '/map', label: t('navMap') },
     { path: '/stories', label: t('navStories') },
-    { path: '/contact', label: t('navContact') },
   ];
 
   return (
