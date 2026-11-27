@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Heart, Compass } from 'lucide-react';
+import { Sparkles, Heart, Compass, ClipboardList, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+
+const SURVEY_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLScU-s4LcqdKK1A9K2g5uzCx5jlF_inn9Vu79-d-q6omxvHWJw/viewform?usp=header';
 
 export const Footer: React.FC = () => {
   const { language, t } = useLanguage();
@@ -36,13 +39,25 @@ export const Footer: React.FC = () => {
                   : 'Each dish represents a timeless cultural story and the spirit of Vietnamese people from North to South. Savor and celebrate our authentic heritage.'}
               </p>
             </div>
-            <Link
-              to="/specialties"
-              className="px-6 py-3.5 rounded-xl bg-[#B83227] hover:bg-[#8F221A] text-white font-bold text-sm shadow-md transition-all shrink-0 flex items-center gap-2 cursor-pointer"
-            >
-              <Compass className="w-4 h-4" />
-              <span>{language === 'vi' ? 'Khám Phá Đặc Sản' : 'Explore Specialties'}</span>
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+              <a
+                href={SURVEY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3.5 rounded-xl bg-[#D4A646] hover:bg-[#e0b557] text-[#39291F] font-bold text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
+              >
+                <ClipboardList className="w-4 h-4" />
+                <span>{language === 'vi' ? 'Tham Gia Khảo Sát' : 'Take Survey'}</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+              <Link
+                to="/specialties"
+                className="px-6 py-3.5 rounded-xl bg-[#B83227] hover:bg-[#8F221A] text-white font-bold text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
+              >
+                <Compass className="w-4 h-4" />
+                <span>{language === 'vi' ? 'Khám Phá Đặc Sản' : 'Explore Specialties'}</span>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -177,6 +192,16 @@ export const Footer: React.FC = () => {
         {/* Bottom Copyright & Heritage Badge */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#FFF8ED]/60 gap-4 text-center sm:text-left">
           <p>© 2026 Tinh Hoa Ẩm Thực Việt. {t('copyright')}</p>
+          <a
+            href={SURVEY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-[#D4A646] hover:text-[#f0c76e] font-semibold underline underline-offset-4 transition-colors"
+          >
+            <ClipboardList className="w-3.5 h-3.5" />
+            <span>{language === 'vi' ? 'Gửi khảo sát & góp ý trải nghiệm' : 'Feedback & Experience Survey'}</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
           <div className="flex items-center gap-2 text-[#D4A646]">
             <span>Được xây dựng với tình yêu ẩm thực quê hương</span>
             <Heart className="w-4 h-4 fill-[#B83227] text-[#B83227]" />
